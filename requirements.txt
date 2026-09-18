@@ -1,0 +1,18 @@
+# DRDO PXE — ADXL345 Data Acquisition System
+# requirements.txt
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# Changes from v1 (MPU6050):
+#   - pyserial REMOVED  (UDP uses Python standard-library socket — no third-party lib)
+#   - pandas   REMOVED  (not imported anywhere in the GUI codebase)
+#
+# v2.8.2 change:
+#   - scipy ADDED  (required for plot_manager._ema via scipy.signal.lfilter —
+#     the old Python for-loop over 40 000 samples caused visible GUI stutter)
+
+PyQt6>=6.7.0
+pyqtgraph>=0.13.7
+numpy>=1.26.0
+scipy>=1.12.0
